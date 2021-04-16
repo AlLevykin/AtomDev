@@ -1,0 +1,15 @@
+.container-v-fluid {
+    height: 100vh;
+  }
+  
+  .container-h-centered {
+    text-align: center;
+  }
+  
+  .container-inline-block {
+    display: inline-block;
+  }
+  
+  .sidebar {
+    width: 280px;
+  }
