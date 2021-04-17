@@ -3,6 +3,8 @@ import { Route } from 'react-router';
 import { Layout } from './components/Layout';
 import { Home } from './components/Home';
 import { Programs } from './components/Programs';
+import { Admissions } from './components/Admissions';
+import { Applications } from './components/Applications';
 import { Students } from './components/Students';
 import { Analytics } from './components/Analytics';
 import { Maps } from './components/Maps';
@@ -33,8 +35,11 @@ export default class App extends Component {
     return (
       <EduOrgContext.Provider value={this.state}>
         <Layout>
-          <Route exact path='/' component={Home} />
+          <Route exact path='/' component={Analytics} />
+          <Route exact path='/home' component={Home} />          
           <Route path='/programs' component={Programs} />
+          <Route path='/admissions' component={Admissions} /> 
+          <Route path='/applications' component={Applications} />                    
           <Route path='/students' component={Students} />
           <Route path='/analytics' component={Analytics} />     
           <Route path='/maps' component={Maps} />                 
