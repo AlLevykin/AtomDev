@@ -4,6 +4,7 @@ import { Layout } from './components/Layout';
 import { Home } from './components/Home';
 import { Programs } from './components/Programs';
 import { Students } from './components/Students';
+import { Analytics } from './components/Analytics';
 
 import EduOrgContext from './components/EduOrgContext';
 
@@ -34,6 +35,7 @@ export default class App extends Component {
           <Route exact path='/' component={Home} />
           <Route path='/programs' component={Programs} />
           <Route path='/students' component={Students} />
+          <Route path='/analytics' component={Analytics} />          
         </Layout>
       </EduOrgContext.Provider>
     );
