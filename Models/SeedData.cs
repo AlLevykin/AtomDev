@@ -25,6 +25,57 @@ namespace AtomDev.Models
             }
             if (!context.Students.Any())
             {
+                TypeOfAdmission admissionType = new TypeOfAdmission()
+                {
+                    Name = "TestAdmissionType"
+                };
+                Authorities localAuth = new Authorities()
+                {
+                    Name = "local Auth",
+                };
+                MunicipalUnit municipal = new MunicipalUnit()
+                {
+                    Name = "Tomskaya Oblast",
+                    Address = "Tomsk",
+                };
+                TypeAuthorities typeAuthorities = new TypeAuthorities()
+                {
+                    Name = "MosProsvet",
+                    Authorities = localAuth
+                };
+                EduOrg technikum = new EduOrg()
+                {
+                    Name = "Technikum",
+                    Address = "Tomsk",
+                    Phone = "899999999",
+                    Latitude = 2.34225,
+                    Longiitude = 4.34564,
+                    License = false,
+                    MunitipalUnit = municipal,
+                    Authoritiies = localAuth,
+                    TypeAuthorities = typeAuthorities
+                };
+                EduOrg college = new EduOrg()
+                {
+                    Name = "College",
+                    Address = "Tomsk",
+                    Phone = "899999999",
+                    Latitude = 2.3677,
+                    Longiitude = 8.34,
+                    License = false,
+                    MunitipalUnit = municipal,
+                    Authoritiies = localAuth,
+                    TypeAuthorities = typeAuthorities
+                };
+                EduProgramType eduProgramType = new EduProgramType()
+                {
+                    Name = "Usual"
+                };
+                Speciality slesar = new Speciality()
+                {
+                    ProgramType = eduProgramType,
+                    Code = "8989"
+                };
                 context.Students.AddRange(
                     new Student
                     {
@@ -41,65 +92,26 @@ namespace AtomDev.Models
                                     Address = "WwwLeningrad",
                                     Privileged = true
                                 },
-                                Organization = new EduOrg()
-                                {
-                                    Name = "Technikum",
-                                    Address = "STP.RU",
-                                    Phone = "899999999",
-                                    Latitude = 2.34225,
-                                    Longiitude = 4.34564,
-                                    License = false,
-                                    MunitipalUnits = new MunicipalUnit()
-                                    {
-                                        Name = "I'm dying",
-                                        Address = "It's 3 AM",
-                                    },
-                                    Authoritiies = new Authorities()
-                                    {
-                                        Name = "Department",
-                                    },
-                                    TypeAuthorities = new TypeAuthorities()
-                                    {
-                                        Name = "MosProsvet",
-                                        Authorities = new Authorities()
-                                    }
-                                }
+                                Organization = technikum
                             },
                             AdmissionPlan = new AdmissionPlan()
                             {
-                                Year = new DateTime(2015, 0, 0),
+                                Year = new DateTime(2015, 1, 1),
                                 AdmissionNumber = 1,
                                 TargetedAdmission = true,
-                                TypeOfAdmission = new TypeOfAdmission()
-                                {
-                                    Name = "Submission"
-                                },
+                                TypeOfAdmission = admissionType,
                                 EduProgram = new EduProgram()
                                 {
-                                    ProgramType = new EduProgramType()
-                                    {
-                                        Name = "Kak obichno, o4en' plochaya"
-                                    },
-                                    Speciality = new Speciality()
-                                    {
-                                        ProgramType = new EduProgramType()
-                                        {
-                                            Name = "It's supposed to be empty"
-                                        },
-                                        Name = "Slesar"
-                                    },
+                                    ProgramType = eduProgramType,
+                                    Speciality = slesar,
                                     Qualification = new Qualification()
                                     {
                                         Name = "Po derevu",
-                                        Speciality = new Speciality()
-                                        {
-                                            ProgramType = new EduProgramType(),
-                                            Code = "8989"
-                                        }
+                                        Speciality = slesar
                                     },
                                     Form = new EduForm()
                                     {
-                                        Name = "Ochnoe"
+                                        Name = "Full-time"
                                     },
                                     Level = new EduLvl()
                                     {
@@ -107,31 +119,9 @@ namespace AtomDev.Models
                                     },
                                     Base = new EduBase()
                                     {
-                                        Name = "Budzhet"
+                                        Name = "Granted"
                                     },
-                                    Organization = new EduOrg()
-                                    {
-                                        Name = "Technikum",
-                                        Address = "STP.RU",
-                                        Phone = "899999999",
-                                        Latitude = 2.34225,
-                                        Longiitude = 4.34564,
-                                        License = false,
-                                        MunitipalUnits = new MunicipalUnit()
-                                        {
-                                            Name = "I'm dying",
-                                            Address = "It's 3 AM",
-                                        },
-                                        Authoritiies = new Authorities()
-                                        {
-                                            Name = "Department",
-                                        },
-                                        TypeAuthorities = new TypeAuthorities()
-                                        {
-                                            Name = "MosProsvet",
-                                            Authorities = new Authorities()
-                                        }
-                                    }
+                                    Organization = technikum
                                 }
                             }
                         },
@@ -152,65 +142,26 @@ namespace AtomDev.Models
                                     Address = "SovietUnion",
                                     Privileged = true
                                 },
-                                Organization = new EduOrg()
-                                {
-                                    Name = "Kolledzh",
-                                    Address = "STP.RU",
-                                    Phone = "899999999",
-                                    Latitude = 2.34225,
-                                    Longiitude = 4.34564,
-                                    License = false,
-                                    MunitipalUnits = new MunicipalUnit()
-                                    {
-                                        Name = "I'm dying",
-                                        Address = "It's 3 AM",
-                                    },
-                                    Authoritiies = new Authorities()
-                                    {
-                                        Name = "Department",
-                                    },
-                                    TypeAuthorities = new TypeAuthorities()
-                                    {
-                                        Name = "MosProsvet",
-                                        Authorities = new Authorities()
-                                    }
-                                }
+                                Organization = college
                             },
                             AdmissionPlan = new AdmissionPlan()
                             {
-                                Year = new DateTime(2015, 0, 0),
+                                Year = new DateTime(2015, 1, 1),
                                 AdmissionNumber = 1,
                                 TargetedAdmission = true,
-                                TypeOfAdmission = new TypeOfAdmission()
-                                {
-                                    Name = "Submission"
-                                },
+                                TypeOfAdmission = admissionType,
                                 EduProgram = new EduProgram()
                                 {
-                                    ProgramType = new EduProgramType()
-                                    {
-                                        Name = "Doroga v zhizn"
-                                    },
-                                    Speciality = new Speciality()
-                                    {
-                                        ProgramType = new EduProgramType()
-                                        {
-                                            Name = "It's supposed to be empty"
-                                        },
-                                        Name = "Slesar"
-                                    },
+                                    ProgramType = eduProgramType,
+                                    Speciality = slesar,
                                     Qualification = new Qualification()
                                     {
                                         Name = "Po metallu",
-                                        Speciality = new Speciality()
-                                        {
-                                            ProgramType = new EduProgramType(),
-                                            Code = "898"
-                                        }
+                                        Speciality = slesar
                                     },
                                     Form = new EduForm()
                                     {
-                                        Name = "Ochnoe"
+                                        Name = "Part-time"
                                     },
                                     Level = new EduLvl()
                                     {
@@ -218,31 +169,9 @@ namespace AtomDev.Models
                                     },
                                     Base = new EduBase()
                                     {
-                                        Name = "Platka"
+                                        Name = "Payed"
                                     },
-                                    Organization = new EduOrg()
-                                    {
-                                        Name = "Kolledg",
-                                        Address = "ST.R",
-                                        Phone = "98888888888888888",
-                                        Latitude = 2.34225,
-                                        Longiitude = 4.34564,
-                                        License = false,
-                                        MunitipalUnits = new MunicipalUnit()
-                                        {
-                                            Name = "I'm dying [2]",
-                                            Address = "It's 3:30 AM",
-                                        },
-                                        Authoritiies = new Authorities()
-                                        {
-                                            Name = "Depar",
-                                        },
-                                        TypeAuthorities = new TypeAuthorities()
-                                        {
-                                            Name = "Mos",
-                                            Authorities = new Authorities()
-                                        }
-                                    }
+                                    Organization = college
                                 }
                             }
                         },

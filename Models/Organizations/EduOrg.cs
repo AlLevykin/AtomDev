@@ -16,7 +16,7 @@ namespace AtomDev.Models.Organizations
         public double Longiitude { get; set; }
         public bool License { get; set; }
         public bool StateAccreditation { get; set; }
-        public MunicipalUnit MunitipalUnits { get; set; }
+        public MunicipalUnit MunitipalUnit { get; set; }
         public Authorities Authoritiies { get; set; }
         public TypeAuthorities TypeAuthorities { get; set; }
     }

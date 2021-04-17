@@ -74,6 +74,7 @@ namespace AtomDev
                     spa.UseReactDevelopmentServer(npmScript: "start");
                 }
             });
+            SeedData.EnsurePopulated(app);
         }
     }
 }
