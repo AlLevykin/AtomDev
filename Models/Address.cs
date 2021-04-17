@@ -16,7 +16,7 @@ namespace AtomDev.Models
         public string MunicipalUnit { get; set; }
         public string MunicipalSettlement { get; set; }
         public string Settlement { get; set; }
-        public string PlanningPatternElemnt { get; set; }
+        public string PlanningPatternElement { get; set; }
         public string RoadNetworkElement { get; set; }
         public string LandLotNumber { get; set; }
         public string MyProperty { get; set; }
