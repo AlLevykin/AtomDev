@@ -31,22 +31,26 @@ namespace AtomDev.Models
                 };
                 Authorities localAuth = new Authorities()
                 {
-                    Name = "local Auth",
+                    Name = "Администрация Томской области",
                 };
                 MunicipalUnit municipal = new MunicipalUnit()
                 {
-                    Name = "Tomskaya Oblast",
-                    Address = "Tomsk",
+                    Name = "Г. Томск",
                 };
                 TypeAuthorities typeAuthorities = new TypeAuthorities()
                 {
-                    Name = "MosProsvet",
+                    Name = "Исполнительный орган",
                     Authorities = localAuth
                 };
                 EduOrg technikum = new EduOrg()
                 {
-                    Name = "Technikum",
-                    Address = "Tomsk",
+                    Name = "Техникум",
+                    Address = new Address 
+                    {
+                        MunicipalUnit = "Томск",
+                        Okrug = "Сибирский Федеральный округ",
+                        Region = "Томская область"
+                    },
                     Phone = "899999999",
                     Latitude = 2.34225,
                     Longiitude = 4.34564,
@@ -58,7 +62,12 @@ namespace AtomDev.Models
                 EduOrg college = new EduOrg()
                 {
                     Name = "College",
-                    Address = "Tomsk",
+                    Address = new Address() 
+                    {
+                        MunicipalUnit = "Томск",
+                        Okrug = "Сибирский Федеральный округ",
+                        Region = "Томская область"
+                    },
                     Phone = "899999999",
                     Latitude = 2.3677,
                     Longiitude = 8.34,
@@ -69,10 +78,11 @@ namespace AtomDev.Models
                 };
                 EduProgramType eduProgramType = new EduProgramType()
                 {
-                    Name = "Usual"
+                    Name = "СПО"
                 };
-                Speciality slesar = new Speciality()
+                Speciality programmer = new Speciality()
                 {
+                    Name = "Программист",
                     ProgramType = eduProgramType,
                     Code = "8989"
                 };
@@ -86,10 +96,14 @@ namespace AtomDev.Models
                                 AppDate = DateTime.Now,
                                 Applicant = new Applicant()
                                 {
-                                    FirstName = "Igor",
-                                    LastName = "Petrov",
+                                    FirstName = "Игорь",
+                                    LastName = "Петров",
                                     Birthday = DateTime.Today,
-                                    Address = "WwwLeningrad",
+                                    Address = new Address() 
+                                    {
+                                        Region = "Московская область",
+                                        Okrug = "Центральный Федеральный округ"
+                                    },
                                     Privileged = true
                                 },
                                 Organization = technikum
@@ -103,23 +117,23 @@ namespace AtomDev.Models
                                 EduProgram = new EduProgram()
                                 {
                                     ProgramType = eduProgramType,
-                                    Speciality = slesar,
+                                    Speciality = programmer,
                                     Qualification = new Qualification()
                                     {
-                                        Name = "Po derevu",
-                                        Speciality = slesar
+                                        Name = ".NET",
+                                        Speciality = programmer
                                     },
                                     Form = new EduForm()
                                     {
-                                        Name = "Full-time"
+                                        Name = "Очная"
                                     },
                                     Level = new EduLvl()
                                     {
-                                        Name = "99"
+                                        Name = "1"
                                     },
                                     Base = new EduBase()
                                     {
-                                        Name = "Granted"
+                                        Name = "Бюджетная основа"
                                     },
                                     Organization = technikum
                                 }
@@ -136,10 +150,15 @@ namespace AtomDev.Models
                                 AppDate = DateTime.Now,
                                 Applicant = new Applicant()
                                 {
-                                    FirstName = "Vasya",
-                                    LastName = "Chilov",
+                                    FirstName = "Аркадий",
+                                    LastName = "Победоносцев",
                                     Birthday = DateTime.Today,
-                                    Address = "SovietUnion",
+                                    Address = new Address 
+                                    {
+                                        MunicipalUnit = "Томск",
+                                        Okrug = "Сибирский Федеральный округ",
+                                        Region = "Томская область"
+                                    },
                                     Privileged = true
                                 },
                                 Organization = college
@@ -153,15 +172,15 @@ namespace AtomDev.Models
                                 EduProgram = new EduProgram()
                                 {
                                     ProgramType = eduProgramType,
-                                    Speciality = slesar,
+                                    Speciality = programmer,
                                     Qualification = new Qualification()
                                     {
-                                        Name = "Po metallu",
-                                        Speciality = slesar
+                                        Name = "JS",
+                                        Speciality = programmer
                                     },
                                     Form = new EduForm()
                                     {
-                                        Name = "Part-time"
+                                        Name = "Очно-заочная"
                                     },
                                     Level = new EduLvl()
                                     {
@@ -169,7 +188,7 @@ namespace AtomDev.Models
                                     },
                                     Base = new EduBase()
                                     {
-                                        Name = "Payed"
+                                        Name = "Платная основа"
                                     },
                                     Organization = college
                                 }

@@ -3,66 +3,23 @@ using System;
 using AtomDev.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace AtomDev.Migrations
 {
     [DbContext(typeof(StudentDbContext))]
-    partial class StudentDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210417111237_InitialServer")]
+    partial class InitialServer
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn)
                 .HasAnnotation("ProductVersion", "3.1.1")
                 .HasAnnotation("Relational:MaxIdentifierLength", 63);
-
-            modelBuilder.Entity("AtomDev.Models.Address", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer")
-                        .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
-
-                    b.Property<string>("LandLotNumber")
-                        .HasColumnType("text");
-
-                    b.Property<string>("MunicipalSettlement")
-                        .HasColumnType("text");
-
-                    b.Property<string>("MunicipalUnit")
-                        .HasColumnType("text");
-
-                    b.Property<string>("MyProperty")
-                        .HasColumnType("text");
-
-                    b.Property<string>("Okrug")
-                        .HasColumnType("text");
-
-                    b.Property<string>("PlanningPatternElemnt")
-                        .HasColumnType("text");
-
-                    b.Property<string>("Region")
-                        .HasColumnType("text");
-
-                    b.Property<string>("RoadNetworkElement")
-                        .HasColumnType("text");
-
-                    b.Property<string>("RoomNumber")
-                        .HasColumnType("text");
-
-                    b.Property<string>("Settlement")
-                        .HasColumnType("text");
-
-                    b.Property<string>("UnfinishedObjectNumber")
-                        .HasColumnType("text");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Address");
-                });
 
             modelBuilder.Entity("AtomDev.Models.Admission.AdmissionPlan", b =>
                 {
@@ -139,8 +96,8 @@ namespace AtomDev.Migrations
                         .HasColumnType("integer")
                         .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
 
-                    b.Property<int?>("AddressId")
-                        .HasColumnType("integer");
+                    b.Property<string>("Address")
+                        .HasColumnType("text");
 
                     b.Property<string>("BirthPlace")
                         .HasColumnType("text");
@@ -184,12 +141,6 @@ namespace AtomDev.Migrations
                     b.Property<string>("Number")
                         .HasColumnType("text");
 
-                    b.Property<int?>("Parent1Id")
-                        .HasColumnType("integer");
-
-                    b.Property<int?>("Parent2Id")
-                        .HasColumnType("integer");
-
                     b.Property<bool>("Privileged")
                         .HasColumnType("boolean");
 
@@ -197,12 +148,6 @@ namespace AtomDev.Migrations
                         .HasColumnType("text");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("AddressId");
-
-                    b.HasIndex("Parent1Id");
-
-                    b.HasIndex("Parent2Id");
 
                     b.ToTable("Applicant");
                 });
@@ -230,33 +175,6 @@ namespace AtomDev.Migrations
                     b.HasIndex("OrganizationId");
 
                     b.ToTable("ApplicationForm");
-                });
-
-            modelBuilder.Entity("AtomDev.Models.Applications.Parent", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer")
-                        .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
-
-                    b.Property<string>("FirstName")
-                        .HasColumnType("text");
-
-                    b.Property<string>("MiddleName")
-                        .HasColumnType("text");
-
-                    b.Property<string>("PhoneNumber")
-                        .HasColumnType("text");
-
-                    b.Property<string>("SecondName")
-                        .HasColumnType("text");
-
-                    b.Property<string>("Type")
-                        .HasColumnType("text");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Parent");
                 });
 
             modelBuilder.Entity("AtomDev.Models.Education.EduBase", b =>
@@ -431,8 +349,8 @@ namespace AtomDev.Migrations
                         .HasColumnType("integer")
                         .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
 
-                    b.Property<int?>("AddressId")
-                        .HasColumnType("integer");
+                    b.Property<string>("Address")
+                        .HasColumnType("text");
 
                     b.Property<int?>("AuthoritiiesId")
                         .HasColumnType("integer");
@@ -452,9 +370,6 @@ namespace AtomDev.Migrations
                     b.Property<string>("Name")
                         .HasColumnType("text");
 
-                    b.Property<int?>("ParentOrgId")
-                        .HasColumnType("integer");
-
                     b.Property<string>("Phone")
                         .HasColumnType("text");
 
@@ -466,13 +381,9 @@ namespace AtomDev.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("AddressId");
-
                     b.HasIndex("AuthoritiiesId");
 
                     b.HasIndex("MunitipalUnitId");
-
-                    b.HasIndex("ParentOrgId");
 
                     b.HasIndex("TypeAuthoritiesId");
 
@@ -485,6 +396,9 @@ namespace AtomDev.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("integer")
                         .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn);
+
+                    b.Property<string>("Address")
+                        .HasColumnType("text");
 
                     b.Property<string>("Name")
                         .HasColumnType("text");
@@ -527,12 +441,6 @@ namespace AtomDev.Migrations
                     b.Property<DateTime>("Date")
                         .HasColumnType("timestamp without time zone");
 
-                    b.Property<bool>("DrivingLicenseB")
-                        .HasColumnType("boolean");
-
-                    b.Property<bool>("Employed")
-                        .HasColumnType("boolean");
-
                     b.HasKey("Id");
 
                     b.HasIndex("AppEduPositionsId");
@@ -560,21 +468,6 @@ namespace AtomDev.Migrations
                     b.HasOne("AtomDev.Models.Applications.ApplicationForm", "ApplicationForm")
                         .WithMany()
                         .HasForeignKey("ApplicationFormId");
-                });
-
-            modelBuilder.Entity("AtomDev.Models.Applications.Applicant", b =>
-                {
-                    b.HasOne("AtomDev.Models.Address", "Address")
-                        .WithMany()
-                        .HasForeignKey("AddressId");
-
-                    b.HasOne("AtomDev.Models.Applications.Parent", "Parent1")
-                        .WithMany()
-                        .HasForeignKey("Parent1Id");
-
-                    b.HasOne("AtomDev.Models.Applications.Parent", "Parent2")
-                        .WithMany()
-                        .HasForeignKey("Parent2Id");
                 });
 
             modelBuilder.Entity("AtomDev.Models.Applications.ApplicationForm", b =>
@@ -635,10 +528,6 @@ namespace AtomDev.Migrations
 
             modelBuilder.Entity("AtomDev.Models.Organizations.EduOrg", b =>
                 {
-                    b.HasOne("AtomDev.Models.Address", "Address")
-                        .WithMany()
-                        .HasForeignKey("AddressId");
-
                     b.HasOne("AtomDev.Models.Organizations.Authorities", "Authoritiies")
                         .WithMany()
                         .HasForeignKey("AuthoritiiesId");
@@ -646,10 +535,6 @@ namespace AtomDev.Migrations
                     b.HasOne("AtomDev.Models.Organizations.MunicipalUnit", "MunitipalUnit")
                         .WithMany()
                         .HasForeignKey("MunitipalUnitId");
-
-                    b.HasOne("AtomDev.Models.Organizations.EduOrg", "ParentOrg")
-                        .WithMany()
-                        .HasForeignKey("ParentOrgId");
 
                     b.HasOne("AtomDev.Models.Organizations.TypeAuthorities", "TypeAuthorities")
                         .WithMany()

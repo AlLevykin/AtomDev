@@ -9,6 +9,8 @@ namespace AtomDev.Models
     {
         public int Id { get; set; }
         public AppEduPosition AppEduPositions { get; set; }
+        public bool Employed { get; set; }
+        public bool DrivingLicenseB { get; set; }
         public DateTime Date { get; set; }
     }
 }
