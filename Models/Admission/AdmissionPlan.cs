@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using AtomDev.Models;
+using AtomDev.Models.Education;
 
 namespace AtomDev.Models.Admission
 {

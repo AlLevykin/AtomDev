@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace AtomDev.Models.EduProgram
+namespace AtomDev.Models.Education
 {
     public class EduBase
     {

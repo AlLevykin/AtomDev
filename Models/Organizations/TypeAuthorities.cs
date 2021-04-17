@@ -7,7 +7,7 @@ namespace AtomDev.Models.Organizations
 {
     public class TypeAuthorities
     {
-        public int Id;
+        public int Id { get; set; }
         public string Name { get; set; }
         public Authorities Authorities { get; set; }
     }
