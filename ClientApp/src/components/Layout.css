@@ -12,4 +12,16 @@
   
   .sidebar {
     width: 350px;
+    position: fixed;
   }
+
+  .topmenu {
+    left: 350px;
+    width: calc(100% - 350px);
+  }
+
+  .main-container {
+    padding-left: 350px;
+    padding-top: 60px;
+  }
+  
