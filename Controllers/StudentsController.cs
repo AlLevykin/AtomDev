@@ -37,5 +37,34 @@ namespace AtomDev.Controllers
             }
             return student;
         }
+
+        [HttpPost]
+        public async Task<ActionResult<Student>> CreateStudent(Student student)
+        {
+            _context.Students.Add(student);
+            await _context.SaveChangesAsync();
+
+            return CreatedAtAction(
+                nameof(GetStudents),
+                new {id = student.Id},
+                student);
+        }
+
+        // DELETE: api/Students/{id}
+        [HttpDelete("{id}")]
+        public async Task<ActionResult<Student>> DeleteStudent(int id)
+        {
+            var student = await _context.Students.FindAsync(id);
+
+            if (student == null)
+            {
+                return NotFound();
+            }
+
+            _context.Students.Remove(student);
+            await _context.SaveChangesAsync();
+
+            return NoContent();
+        }
     }
 }

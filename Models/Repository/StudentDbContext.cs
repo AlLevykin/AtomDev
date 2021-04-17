@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using AtomDev.Models.Organizations;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,5 +13,6 @@ namespace AtomDev.Models
             : base(options) { }
 
         public DbSet<Student> Students { get; set; }
+        public DbSet<EduOrg> Organizations { get; set; }
     }
 }
