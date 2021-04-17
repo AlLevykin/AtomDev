@@ -7,32 +7,29 @@ export const VacationChart = () => {
 
     useEffect(() => {
         am4core.useTheme(am4themes_animated);
-        // Themes end
-        
-         // Create chart instance
+
         let chart = am4core.create("vacationchartdiv", am4charts.XYChart);
-        
-        // Add data
+
         chart.data = [{
-          "year": 2005,
-          "income": 23.5,
-          "expenses": 18.1
+          "year": 2020,
+          "income": 3350,
+          "expenses": 2810
         },{
-          "year": 2006,
-          "income": 26.2,
-          "expenses": 22.8
+          "year": 2019,
+          "income": 2620,
+          "expenses": 2580
         },{
-          "year": 2007,
-          "income": 30.1,
-          "expenses": 23.9
+          "year": 2018,
+          "income": 3010,
+          "expenses": 2390
         },{
-          "year": 2008,
-          "income": 29.5,
-          "expenses": 25.1
+          "year": 2017,
+          "income": 2950,
+          "expenses": 2510
         },{
-          "year": 2009,
-          "income": 24.6,
-          "expenses": 25
+          "year": 2016,
+          "income": 2960,
+          "expenses": 2750
         }];
         
         // Create axes
@@ -46,8 +43,7 @@ export const VacationChart = () => {
         
         let  valueAxis = chart.xAxes.push(new am4charts.ValueAxis()); 
         valueAxis.renderer.opposite = true;
-        
-        // Create series
+
         function createSeries(field, name) {
           let series = chart.series.push(new am4charts.ColumnSeries());
           series.dataFields.valueX = field;
@@ -73,8 +69,8 @@ export const VacationChart = () => {
           categoryLabel.label.truncate = false;
         }
         
-        createSeries("income", "Income");
-        createSeries("expenses", "Expenses");
+        createSeries("income", "Выпускники");
+        createSeries("expenses", "Трудоустроенные");
       });
 
     return (

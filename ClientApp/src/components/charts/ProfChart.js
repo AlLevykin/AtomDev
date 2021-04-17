@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import * as am4core from "@amcharts/amcharts4/core";
 import * as am4charts from "@amcharts/amcharts4/charts";
 import am4themes_animated from "@amcharts/amcharts4/themes/animated";
+import am4lang_ru_RU from "@amcharts/amcharts4/lang/ru_RU";
 
 export const ProfChart = () => {
 
@@ -11,12 +12,13 @@ export const ProfChart = () => {
         let profChart = am4core.create("profchartdiv", am4charts.XYChart);
 
         profChart.paddingRight = 20;
+        profChart.language.locale = am4lang_ru_RU;
 
         let data = [];
         let visits = 10;
         for (let i = 1; i < 366; i++) {
-        visits += Math.round((Math.random() < 0.5 ? 1 : -1) * Math.random() * 10);
-        data.push({ date: new Date(2018, 0, i), name: "name" + i, value: visits });
+        visits += Math.round((Math.random() < 0.5 ? 1 : 0) * Math.random() * 10);
+        data.push({ date: new Date(2020, 0, i), name: "name" + i, value: visits });
         }
 
         profChart.data = data;
@@ -32,7 +34,7 @@ export const ProfChart = () => {
         series.dataFields.dateX = "date";
         series.dataFields.valueY = "value";
 
-        series.tooltipText = "{valueY.value}";
+        series.tooltipText = "Подано заявлений: {valueY.value}";
         profChart.cursor = new am4charts.XYCursor();
 
         let scrollbarX = new am4charts.XYChartScrollbar();
