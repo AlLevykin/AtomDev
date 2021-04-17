@@ -11,6 +11,7 @@ namespace AtomDev.Models
     {
         public int Id { get; set; }
         public ApplicationForm ApplicationForm { get; set; }
+        //Change to IEnumerable
         public AdmissionPlan AdmissionPlan { get; set; }
     }
 }
