@@ -7,7 +7,7 @@ export const Unpo = () => {
     return (
         <p className="text-center">
             <NavLink tag={Link} to="/">
-                <img src="logo.png" className="img-fluid" alt="Logo" />
+                <img src="logo.png" alt="Logo" />
             </NavLink>
         </p>
     );

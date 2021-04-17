@@ -14,55 +14,55 @@ export const DriversChart = () => {
         
         // Add data
         chart.data = [{
-          "country": "USA",
-          "visits": 4025
+          "country": "АТпромИС",
+          "visits": 2025
         }, {
-          "country": "China",
+          "country": "КТПРТ",
           "visits": 1882
         }, {
-          "country": "Japan",
+          "country": "ТЛТ",
           "visits": 1809
         }, {
-          "country": "Germany",
+          "country": "ТТСТ",
           "visits": 1322
         }, {
-          "country": "UK",
+          "country": "ТТИТ",
           "visits": 1122
         }, {
-          "country": "France",
+          "country": "ТТВТС",
           "visits": 1114
         }, {
-          "country": "India",
+          "country": "ТПГК",
           "visits": 984
         }, {
-          "country": "Spain",
+          "country": "ТМТТ",
           "visits": 711
         }, {
-          "country": "Netherlands",
+          "country": "ТКГТ",
           "visits": 665
         }, {
-          "country": "Russia",
+          "country": "ТомИнТех",
           "visits": 580
         }, {
-          "country": "South Korea",
+          "country": "КСПК",
           "visits": 443
         }, {
-          "country": "Canada",
+          "country": "ПКТ",
           "visits": 441
         }, {
-          "country": "Brazil",
+          "country": "ТБМК",
           "visits": 395
         }, {
-          "country": "Italy",
+          "country": "КИПТСУ",
           "visits": 386
         }, {
-          "country": "Australia",
+          "country": "КСВПК",
           "visits": 384
         }, {
-          "country": "Taiwan",
+          "country": "МТОТ",
           "visits": 338
         }, {
-          "country": "Poland",
+          "country": "КТАБ",
           "visits": 328
         }];
         
@@ -79,7 +79,7 @@ export const DriversChart = () => {
         categoryAxis.tooltip.label.verticalCenter = "middle";
         
         let valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
-        valueAxis.title.text = "Countries";
+        valueAxis.title.text = "ОГБПОУ";
         valueAxis.title.fontWeight = "bold";
         
         // Create series

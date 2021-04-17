@@ -12,31 +12,31 @@ export const ApplicationChart = () => {
         
         // Add data
         chart.data = [ {
-          "country": "Lithuania",
-          "litres": 501.9
+          "country": "Слесарь",
+          "litres": 501
         }, {
-          "country": "Czechia",
-          "litres": 301.9
+          "country": "Повар",
+          "litres": 301
         }, {
-          "country": "Ireland",
-          "litres": 201.1
+          "country": "Рабочий",
+          "litres": 201
         }, {
-          "country": "Germany",
-          "litres": 165.8
+          "country": "Контролер",
+          "litres": 165
         }, {
-          "country": "Australia",
+          "country": "Кассир",
           "litres": 139.9
         }, {
-          "country": "Austria",
-          "litres": 128.3
+          "country": "Юрист",
+          "litres": 128
         }, {
-          "country": "UK",
+          "country": "Водитель",
           "litres": 99
         }, {
-          "country": "Belgium",
+          "country": "Маляр",
           "litres": 60
         }, {
-          "country": "The Netherlands",
+          "country": "Кондитер",
           "litres": 50
         } ];
         

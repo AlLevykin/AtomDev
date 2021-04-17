@@ -15,7 +15,7 @@ export const Analytics = () => {
                 <ApplicationChart></ApplicationChart>             
             </div>
             <div className="col-sm">
-                <h4 className="text-secondary text-center">Результаты приемной компании</h4>
+                <h4 className="text-secondary text-center">Результаты приемной кампании</h4>
                 <ProfChart></ProfChart>
             </div>
         </div>
@@ -25,7 +25,7 @@ export const Analytics = () => {
                 <DriversChart></DriversChart>             
             </div>
             <div className="col-sm">
-                <h4 className="text-secondary text-center">Количество свободных мест</h4>
+                <h4 className="text-secondary text-center">Процент трудоустройства</h4>
                 <VacationChart></VacationChart>
             </div>
         </div>   
@@ -35,7 +35,7 @@ export const Analytics = () => {
            
             </div>
             <div className="col-sm">
-                <h4 className="text-secondary text-center">Процент трудоустройства</h4>
+                <h4 className="text-secondary text-center">Количество свободных мест</h4>
 
             </div>
         </div>               
