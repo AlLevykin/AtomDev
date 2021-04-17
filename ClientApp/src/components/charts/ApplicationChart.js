@@ -9,7 +9,7 @@ export const ApplicationChart = () => {
         am4core.useTheme(am4themes_animated);
 
         let chart = am4core.create("applchartdiv", am4charts.PieChart);
-        
+                
         // Add data
         chart.data = [ {
           "country": "Слесарь",
@@ -50,6 +50,7 @@ export const ApplicationChart = () => {
         pieSeries.slices.template.stroke = am4core.color("#fff");
         pieSeries.slices.template.strokeWidth = 2;
         pieSeries.slices.template.strokeOpacity = 1;
+        pieSeries.labels.template.wrap = true;
         
         // This creates initial animation
         pieSeries.hiddenState.properties.opacity = 1;

@@ -16,7 +16,7 @@ export const ProfChart = () => {
 
         let data = [];
         let visits = 10;
-        for (let i = 1; i < 366; i++) {
+        for (let i = 120; i < 220; i++) {
         visits += Math.round((Math.random() < 0.5 ? 1 : 0) * Math.random() * 10);
         data.push({ date: new Date(2020, 0, i), name: "name" + i, value: visits });
         }
