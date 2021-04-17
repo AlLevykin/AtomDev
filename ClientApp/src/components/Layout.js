@@ -13,8 +13,8 @@ export class Layout extends Component {
                 <main role="main">
                     <div className="row">
                         <Sidebarnav />                        
-                        <div className="col container-v-fluid px-0">                            
-                            <Topmenu />
+                        <Topmenu />
+                        <div className="col container-v-fluid main-container">  
                             <Container>
                                 {this.props.children}
                             </Container>
