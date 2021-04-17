@@ -10,7 +10,7 @@ namespace AtomDev.Models.Organizations
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public string Address { get; set; }
+        public Address Address { get; set; }
         public string Phone { get; set; }
         public double Latitude { get; set; }
         public double Longiitude { get; set; }
@@ -19,5 +19,6 @@ namespace AtomDev.Models.Organizations
         public MunicipalUnit MunitipalUnit { get; set; }
         public Authorities Authoritiies { get; set; }
         public TypeAuthorities TypeAuthorities { get; set; }
+        public EduOrg ParentOrg { get; set; }
     }
 }

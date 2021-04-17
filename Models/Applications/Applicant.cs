@@ -19,11 +19,13 @@ namespace AtomDev.Models.Applications
         public string Number { get; set; }
         public string IssuedBy { get; set; }
         public string IssuedWhen { get; set; }
-        public string Address { get; set; }
+        public Address Address { get; set; }
         public string MobPhone { get; set; }
         public string HomePhone { get; set; }
         public string Email { get; set; }
         public bool ManSex { get; set; }
         public bool Privileged { get; set; }
+        public Parent Parent1 { get; set; }
+        public Parent Parent2 { get; set; }
     }
 }
