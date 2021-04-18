@@ -12,5 +12,8 @@ namespace AtomDev.Models
         public bool Employed { get; set; }
         public bool DrivingLicenseB { get; set; }
         public DateTime Date { get; set; }
+        public string FirstName => AppEduPositions.ApplicationForm.Applicant.FirstName;
+        public string SecondName => AppEduPositions.ApplicationForm.Applicant.SecondName;
+        public string MiddleName => AppEduPositions.ApplicationForm.Applicant.MiddleName;
     }
 }

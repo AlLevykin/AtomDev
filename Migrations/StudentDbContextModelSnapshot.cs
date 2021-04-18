@@ -8,7 +8,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace AtomDev.Migrations
 {
-    [DbContext(typeof(StudentDbContext))]
+    [DbContext(typeof(ApplicationDbContext))]
     partial class StudentDbContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)

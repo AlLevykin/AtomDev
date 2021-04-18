@@ -9,7 +9,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace AtomDev.Migrations
 {
-    [DbContext(typeof(StudentDbContext))]
+    [DbContext(typeof(ApplicationDbContext))]
     [Migration("20210417111237_InitialServer")]
     partial class InitialServer
     {

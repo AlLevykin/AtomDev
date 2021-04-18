@@ -24,7 +24,7 @@ namespace AtomDev
         {
 
             services.AddControllersWithViews();
-            services.AddDbContext<StudentDbContext>(options => {
+            services.AddDbContext<ApplicationDbContext>(options => {
                 options.UseNpgsql(Configuration.GetConnectionString("DataAccessPostgreSqlProvider"));
             });
             services.AddScoped<IStudentRepository, EFStudentRepository>();
