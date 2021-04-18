@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace AtomDev.Models
 {
-    public class StudentDbContext : DbContext
+    public class ApplicationDbContext : DbContext
     {
-        public StudentDbContext(DbContextOptions<StudentDbContext> options)
+        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options) { }
 
         public DbSet<Student> Students { get; set; }

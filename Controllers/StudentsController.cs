@@ -12,8 +12,8 @@ namespace AtomDev.Controllers
     [ApiController]
     public class StudentsController : ControllerBase
     {
-        private readonly StudentDbContext _context;
-        public StudentsController(StudentDbContext context)
+        private readonly ApplicationDbContext _context;
+        public StudentsController(ApplicationDbContext context)
         {
             _context = context;
         }
@@ -22,7 +22,14 @@ namespace AtomDev.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Student>>> GetStudents()
         {
-            return await _context.Students.ToListAsync();
+            var students = await _context.Students.ToListAsync();
+
+            if (students == null)
+            {
+                return NotFound();
+            }
+
+            return students;
         }
 
         //GET: api/Students/{Id}

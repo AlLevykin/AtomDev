@@ -7,9 +7,9 @@ namespace AtomDev.Models
 {
     public class EFStudentRepository : IStudentRepository
     {
-        public StudentDbContext context;
+        public ApplicationDbContext context;
 
-        public EFStudentRepository(StudentDbContext ctx)
+        public EFStudentRepository(ApplicationDbContext ctx)
         {
             context = ctx;
         }

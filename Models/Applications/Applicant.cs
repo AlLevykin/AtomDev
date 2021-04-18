@@ -8,8 +8,9 @@ namespace AtomDev.Models.Applications
     public class Applicant
     {
         public int Id { get; set; }
+        //Names go to Student model
         public string FirstName { get; set; }
-        public string LastName { get; set; }
+        public string SecondName { get; set; }
         public string MiddleName { get; set; }
         public DateTime Birthday { get; set; }
         public string BirthPlace { get; set; }

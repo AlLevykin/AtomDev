@@ -16,8 +16,8 @@ namespace AtomDev.Models
     {
         public static void EnsurePopulated(IApplicationBuilder app)
         {
-            StudentDbContext context = app.ApplicationServices
-                .CreateScope().ServiceProvider.GetRequiredService<StudentDbContext>();
+            ApplicationDbContext context = app.ApplicationServices
+                .CreateScope().ServiceProvider.GetRequiredService<ApplicationDbContext>();
 
             if(context.Database.GetPendingMigrations().Any())
             {
@@ -97,7 +97,7 @@ namespace AtomDev.Models
                                 Applicant = new Applicant()
                                 {
                                     FirstName = "Игорь",
-                                    LastName = "Петров",
+                                    SecondName = "Петров",
                                     Birthday = DateTime.Today,
                                     Address = new Address() 
                                     {
@@ -151,7 +151,7 @@ namespace AtomDev.Models
                                 Applicant = new Applicant()
                                 {
                                     FirstName = "Аркадий",
-                                    LastName = "Победоносцев",
+                                    SecondName = "Победоносцев",
                                     Birthday = DateTime.Today,
                                     Address = new Address 
                                     {
