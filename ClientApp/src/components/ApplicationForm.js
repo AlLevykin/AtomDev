@@ -49,7 +49,7 @@ export const ApplicationForm = (props) => {
                 </div>
                 <div className="col-md-6"> 
                 <div className="d-grid gap-2">
-                <Dropdown isOpen={dropdownOpen} toggle={toggle}>
+                <Dropdown className="btn btn-secondary" isOpen={dropdownOpen} toggle={toggle}>
                     <DropdownToggle caret>
                     Сохранить
                     </DropdownToggle>
